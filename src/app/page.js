@@ -5,8 +5,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { getBooks, getPublicBooks } from '../api/bookData';
-import { useAuth } from '../utils/context/authContext';
+import { getPublicBooks } from '../api/bookData';
+// import { useAuth } from '../utils/context/authContext';
 import BookCard from '../components/BookCard';
 
 function Home() {
@@ -14,16 +14,11 @@ function Home() {
   const [books, setBooks] = useState([]);
 
   // TODO: Get user ID using useAuth Hook
-  const { user } = useAuth();
+  // const { user } = useAuth();
 
   // TODO: create a function that makes the API call to get all the books
   const getAllTheBooks = () => {
-    Promise.all([getPublicBooks(), getBooks(user.uid)]).then(([publicBooks, userBooks]) => {
-      const userBookKeys = new Set(userBooks.map((book) => book.firebaseKey));
-      const uniquePublicBooks = publicBooks.filter((book) => !userBookKeys.has(book.firebaseKey));
-      const allBooks = [...userBooks, ...uniquePublicBooks];
-      setBooks(allBooks);
-    });
+    getPublicBooks().then(setBooks);
   };
 
   // TODO: make the call to the API to get all the books on component render
