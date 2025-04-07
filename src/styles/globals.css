@@ -1,4 +1,101 @@
-body {
-  background: black;
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+.__className_d65c78 {
+  background: #f4dbd8;
+  color: #775144;
+}
+
+.lavishly-yours-regular {
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.navbar {
+  background: #869d7a;
+  border-radius: 5px;
+  box-shadow: 2px 2px #775144;
+}
+
+.navbar-brand {
+  color: #f4dbd8;
+  font-family: "Lavishly Yours", cursive;
+  font-size: 2rem !important;  
+  text-shadow: 2px 1px 0px #775144;
+  z-index: 1;
+}
+
+.logo-span {
+  color: #775144;
+  font-weight: 800;
+  text-shadow: 1px 1px #f4dbd8;
+  margin-left: -3px;
+  z-index: 2;
+}
+
+.navbar a {
+  color: #f4dbd8
+}
+
+.navbar-toggler.collapsed {
+  position: absolute;
+  right: 20%;
+  border: 2px solid black;
+  box-shadow: 1px 1px #f4dbd8;
+}
+
+.navbar-toggler-icon {
+  color: black;
+  text-shadow: 3px 3px black;
+}
+
+.dropdown-menu a {
+  color: black;
+}
+
+.card {
+  box-shadow: 3px 3px black;
+}
+
+.book-card .card-body {
+  background: #775144;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.author-card .card-body {
+  background: #775144;
+  border-radius: 5px;
+}
+
+.card-title.h5 {
+  color: #f4dbd8;
+}
+
+.card-text {
+  color: #f4dbd8;
+}
+
+.green-button {
+  background-color: #869d7a !important;
+  border-color: #869d7a !important;
+}
+
+.green-button:hover {
+  background-color: #6d7e64 !important;
+  border-color: #6d7e64 !important;
+}
+
+.brown-button {
+  background-color: #2a0800 !important;
+  border-color: #2a0800 !important;
+}
+
+.brown-button:hover {
+  background-color: #430d01 !important;
+  border-color: #430d01 !important;
+}
+
+.profile-container {
+  justify-self: center;
+  margin: 10px 0px 20px;
 }

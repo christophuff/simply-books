@@ -16,19 +16,23 @@ export default function ViewBook({ params }) {
   }, [firebaseKey]);
 
   return (
-    <div className="mt-5 d-flex flex-wrap">
-      <div className="d-flex flex-column">
-        <img src={bookDetails.image} alt={bookDetails.title} style={{ width: '300px' }} />
-      </div>
-      <div className="text-white ms-5 details">
-        <h5>
-          {bookDetails.title} by {bookDetails.authorObject?.first_name} {bookDetails.authorObject?.last_name}
-          {bookDetails.authorObject?.favorite ? ' 🤍' : ''}
-        </h5>
-        Author Email: <a href={`mailto:${bookDetails.authorObject?.email}`}>{bookDetails.authorObject?.email}</a>
-        <p>{bookDetails.description || ''}</p>
-        <hr />
-        <p>{bookDetails.sale ? `🏷️ Sale $${bookDetails.price}` : `$${bookDetails.price}`}</p>
+    <div className="container mt-5">
+      <div className="row align-items-center">
+        {/* Book Image */}
+        <div className="col-md-4 text-center mb-3 mb-md-0">
+          <img src={bookDetails.image} alt={bookDetails.title} style={{ height: '400px' }} />
+        </div>
+
+        {/* Book Details */}
+        <div className="col-md-8">
+          <h5>
+            {bookDetails.title} by {bookDetails.authorObject?.first_name} {bookDetails.authorObject?.last_name}
+          </h5>
+          Author Email: <a href={`mailto:${bookDetails.authorObject?.email}`}>{bookDetails.authorObject?.email}</a>
+          <p>{bookDetails.description || ''}</p>
+          <hr />
+          <p>{bookDetails.sale ? `🏷️ Sale $${bookDetails.price}` : `$${bookDetails.price}`}</p>
+        </div>
       </div>
     </div>
   );

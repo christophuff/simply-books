@@ -16,6 +16,17 @@ const getBooks = (uid) =>
       .catch(reject);
   });
 
+const getPublicBooks = () =>
+  new Promise((resolve, reject) => {
+    fetch(`${endpoint}/books.json?orderBy="public"&equalTo=true`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((response) => response.json())
+      .then((data) => resolve(Object.values(data)))
+      .catch(reject);
+  });
+
 // TODO: DELETE BOOK
 const deleteBook = (firebaseKey) =>
   new Promise((resolve, reject) => {
@@ -103,4 +114,4 @@ const booksOnSale = (uid) =>
       .catch(reject);
   });
 
-export { getBooks, createBook, booksOnSale, deleteBook, getSingleBook, updateBook, getBooksByAuthor };
+export { getBooks, getPublicBooks, createBook, booksOnSale, deleteBook, getSingleBook, updateBook, getBooksByAuthor };

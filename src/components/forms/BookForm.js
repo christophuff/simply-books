@@ -56,7 +56,7 @@ function BookForm({ obj = initialState }) {
 
   return (
     <Form onSubmit={handleSubmit} className="text-black">
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Book</h2>
+      <h2 className="mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Book</h2>
 
       {/* TITLE INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Book Title" className="mb-3">
@@ -106,6 +106,20 @@ function BookForm({ obj = initialState }) {
         }}
       />
 
+      <Form.Check
+        type="switch"
+        id="public"
+        name="sale"
+        label="Make Public?"
+        checked={formInput.public}
+        onChange={(e) =>
+          setFormInput((prevState) => ({
+            ...prevState,
+            public: e.target.checked,
+          }))
+        }
+      />
+
       {/* SUBMIT BUTTON  */}
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Book</Button>
     </Form>
@@ -118,6 +132,7 @@ BookForm.propTypes = {
     image: PropTypes.string,
     price: PropTypes.string,
     sale: PropTypes.bool,
+    public: PropTypes.bool,
     title: PropTypes.string,
     author_id: PropTypes.string,
     firebaseKey: PropTypes.string,
