@@ -59,3 +59,10 @@
 ### 4. Run the App Locally
 
 - npm run dev
+
+
+#### Link to Loom Videos
+
+https://www.loom.com/share/20a783838e1c415eb90e4bcf79c0a2cf?sid=35d20729-9a79-4f55-ae10-cfef1d930aa4
+
+https://www.loom.com/share/df8cce41b86d47168f1609416ae0f7b5?sid=13cc21d8-4e4f-4210-b528-2554a0deae08
